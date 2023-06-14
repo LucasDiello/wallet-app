@@ -1,3 +1,5 @@
+import { REQUEST } from '../actions';
+
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
   currencies: [],
@@ -6,6 +8,13 @@ const INITIAL_STATE = {
   idToEdit: 0,
 };
 
-const wallet = (state = INITIAL_STATE, action) => state && action;
+const wallet = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+  case REQUEST: {
+    return { ...state, currencies: action.payload }; }
+  default:
+    return state;
+  }
+};
 
 export default wallet;
