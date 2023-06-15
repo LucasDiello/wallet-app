@@ -1,4 +1,4 @@
-import { REQUEST } from '../actions';
+import { ADD_EXPENSE, REQUEST, REQUESTFULL } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
@@ -11,7 +11,32 @@ const INITIAL_STATE = {
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case REQUEST: {
-    return { ...state, currencies: action.payload }; }
+    return { ...state,
+      currencies: action.payload,
+    }; }
+  case ADD_EXPENSE: {
+    const newExpense = {
+      ...action.payload,
+      exchangeRates: {},
+    };
+
+    return {
+      ...state,
+      expenses: [...state.expenses, newExpense],
+    };
+  }
+  case REQUESTFULL: {
+    const { expenses } = state;
+    const allExpense = expenses.map((expense) => ({
+      ...expense,
+      exchangeRates: action.payload,
+    }));
+
+    return {
+      ...state,
+      expenses: allExpense,
+    };
+  }
   default:
     return state;
   }
