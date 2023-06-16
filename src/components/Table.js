@@ -36,19 +36,22 @@ class Table extends Component {
 
               return (
                 <tr key={ expense.id }>
-                  <th>{expense.description}</th>
-                  <th>{expense.tag}</th>
-                  <th>{expense.method}</th>
-                  <th>{expense.value}</th>
-                  <th>{expense.exchangeRates[expense.currency]?.name}</th>
-                  <th>{expense.exchangeRates[expense.currency]?.ask}</th>
-                  <th>{total }</th>
-                  <th>Real</th>
-                  <button
+                  <td>{expense.description}</td>
+                  <td>{expense.tag}</td>
+                  <td>{expense.method}</td>
+                  <td>{expense.value}.00</td>
+                  <td>{expense.exchangeRates[expense.currency]?.name}</td>
+                  <td>{askValue.toFixed(2)}</td>
+                  <td>{total }</td>
+                  <td>Real</td>
+                  <td><button
                     onClick={ () => this.deleteExpense(expense.id) }
+                    data-testid="delete-btn"
                   >
-                    Editar/Exlcuir
+                  Exlcuir
                   </button>
+                  <button>Editar</button>
+                  </td>
                 </tr>
               );
             })}

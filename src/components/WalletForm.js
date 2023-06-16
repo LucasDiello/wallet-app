@@ -9,7 +9,7 @@ class WalletForm extends Component {
     value: '',
     description: '',
     currency: 'USD',
-    method: '',
+    method: 'Dinheiro',
     tag: '',
   };
 
