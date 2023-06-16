@@ -18,7 +18,6 @@ class Header extends Component {
   render() {
     const { email } = this.props;
     const total = this.calculateExpense();
-    console.log(total);
     return (
       <div>
         <h1>Header</h1>

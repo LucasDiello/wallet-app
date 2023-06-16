@@ -1,4 +1,4 @@
-import { ADD_EXPENSE, REQUEST, REQUESTFULL } from '../actions';
+import { ADD_EXPENSE, DELETE_EXPENSE, REQUEST, REQUESTFULL } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
@@ -35,6 +35,14 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: allExpense,
+    };
+  }
+  case DELETE_EXPENSE: {
+    const { expenses } = state;
+    const newExpenses = expenses.filter((expense) => expense.id !== action.payload);
+    return {
+      ...state,
+      expenses: newExpenses,
     };
   }
   default:

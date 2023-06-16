@@ -3,6 +3,7 @@ export const VALID_EMAIL = 'LOGIN';
 export const REQUEST = 'REQUEST';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const REQUESTFULL = 'REQUESTFULL';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 const login = (email) => ({
   type: VALID_EMAIL,
@@ -22,6 +23,11 @@ export const addExpense = (expense) => ({
 export const requestFullObject = (moeda) => ({
   type: REQUESTFULL,
   payload: moeda,
+});
+
+export const deleteExpense = (expense) => ({
+  type: DELETE_EXPENSE,
+  payload: expense,
 });
 
 export const fetchMoeda = () => (dispatch) => {
