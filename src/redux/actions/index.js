@@ -4,6 +4,8 @@ export const REQUEST = 'REQUEST';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const REQUESTFULL = 'REQUESTFULL';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const SAVE_EDIT = 'SAVE_EDIT';
 
 const login = (email) => ({
   type: VALID_EMAIL,
@@ -27,6 +29,16 @@ export const requestFullObject = (moeda) => ({
 
 export const deleteExpense = (expense) => ({
   type: DELETE_EXPENSE,
+  payload: expense,
+});
+
+export const editExpense = (expense) => ({
+  type: EDIT_EXPENSE,
+  payload: expense,
+});
+
+export const saveEdit = (expense) => ({
+  type: SAVE_EDIT,
   payload: expense,
 });
 
