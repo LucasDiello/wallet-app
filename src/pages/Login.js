@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import login from '../redux/actions';
+import '../login.css';
+import { passwords, login } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
@@ -20,9 +21,10 @@ class Login extends React.Component {
   };
 
   handleclick = () => {
-    const { email } = this.state;
+    const { email, password } = this.state;
     const { dispatch, history } = this.props;
     dispatch(login(email));
+    dispatch(passwords(password));
     history.push('/carteira');
   };
 
@@ -35,40 +37,41 @@ class Login extends React.Component {
   render() {
     return (
 
-      <>
-        <div>Login</div>
-        <form>
-          <label>
-            Email:
-            <input
-              onChange={ this.handleChange }
-              data-testid="email-input"
-              name="email"
-              type="email"
-            />
+      <main id="main-login">
+        <div>
+          <p>Login</p>
+          <form id="form-login">
+            <label>
+              Email
+              <input
+                onChange={ this.handleChange }
+                data-testid="email-input"
+                name="email"
+                type="email"
+              />
 
-          </label>
-          <label>
-            Senha:
-            <input
-              data-testid="password-input"
-              name="password"
-              type="password"
-              onChange={ this.handleChange }
-            />
+            </label>
+            <label>
+              Senha
+              <input
+                data-testid="password-input"
+                name="password"
+                type="password"
+                onChange={ this.handleChange }
+              />
 
-          </label>
-          <button
-            disabled={ this.handledisabled() }
-            onClick={ this.handleclick }
-            type="button"
-          >
-            Entrar
+            </label>
+            <button
+              disabled={ this.handledisabled() }
+              onClick={ this.handleclick }
+              type="button"
+            >
+              Entrar
 
-          </button>
-        </form>
-
-      </>
+            </button>
+          </form>
+        </div>
+      </main>
 
     );
   }

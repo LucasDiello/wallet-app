@@ -6,10 +6,16 @@ export const REQUESTFULL = 'REQUESTFULL';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const SAVE_EDIT = 'SAVE_EDIT';
+export const PASSWORD = 'PASSWORD';
 
-const login = (email) => ({
+export const login = (email) => ({
   type: VALID_EMAIL,
   payload: email,
+});
+
+export const passwords = (passwor) => ({
+  type: PASSWORD,
+  payload: passwor,
 });
 
 const request = (moeda) => ({
@@ -52,4 +58,3 @@ export const fetchMoeda = () => (dispatch) => {
     });
 };
 
-export default login;

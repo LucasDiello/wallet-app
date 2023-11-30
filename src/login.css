@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: rgb(19 17 17);
+  background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgba(13,11,11,1) 50%, rgba(26,26,29,1) 80%);
+  color: white;
+}
+#header-content > p:nth-child(2) > svg {
+  margin-right: 10px;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+  color: green;
+  border: 1px solid green;
+  border-radius: 50%;
+}
+
+#header-content > h1 {
+  font-size: 3em;
+  color: black;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header-content > p:nth-child(3) {
+  color: black;
+}
+
+#header-content > p:nth-child(3) > span {
+  color: gray;
+}
+
+
+#header-content > p:nth-child(2) {
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+#main-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#main-login > div {
+  border: 2px solid rgb(231, 228, 228);
+  border-radius: 10px;
+  height: 450px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+#main-login > div > p {
+  margin-top: 30px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+#form-login {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  justify-content: center;
+}
+
+#form-login > label > input {
+  margin: 20px;
+  border:none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  background-color: inherit;
+}
+
+
+#form-login > button {
+  margin-top: 20px;
+  transition-duration: .3s;
+  justify-content: end;
+  width: 100px;
+}
+
+#form-login > button:disabled {
+  background-color: rgb(210, 210, 210);
+  border: none
+}
+
+#form-login > button:enabled {
+  background-color: rgb(106, 238, 106);
+  border-top: none;
+  border-left: none;
+}
+
+#form-login > button:active {
+  transform: scale(.7);
+}
+
+#main-table {
+  display: flex;
+  height: 100vh;
+  background-image: url("./foto-fundo.png");
+  background-color: green;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 500px;
+  border-bottom-left-radius: 20px ;
+  border-bottom-right-radius: 20px ;
+
+}
+
+#table {
+  background-color: #003BE5;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 600px;
+  position: relative;
+  bottom: 284px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#header-items {
+  display: flex;
+  height: 23vh;
+  background-color: white;
+}
+
+#header-content {
+  display: flex;
+  width: 100%;
+  color: blue;
+  font-weight: bold;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#table-content {
+  height: 30vh;
+}
+
+#form-table {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.94);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 19vh;
+}
+
+#form-table > label {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: blue;
+  font-weight: bold;
+}
+
+#form-table > label:nth-child(1) {
+  margin-left: 6%;
+  margin-right: 5%;
+}
+
+#form-table > label:nth-child(2) {
+}
+
+#form-table > label:nth-child(1) > input {
+  border: 1.5px solid blue;
+  background-color: inherit;
+  width: 400px;
+  height: 35px;
+  border-radius: 10px;
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+#form-table > label:nth-child(2) > select {
+  border: 1.5px solid blue;
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: inherit;
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+#form-table > label:nth-child(3) > input {
+  border: 1.5px solid blue;
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: inherit;
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+#form-table > label:nth-child(4) > select {
+  border: 1.5px solid blue;
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: inherit;
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+
+#form-table > label:nth-child(5) > select {
+  border: 1.5px solid blue;
+  background-color: inherit;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+#table-content > div  {
+  display: flex;
+  justify-content: center;
+  height: 10.6vh;
+  align-items: center;
+  background-color: white;
+  border-bottom-left-radius: 20px ;
+  border-bottom-right-radius: 20px ;
+}
+
+#table-content > div > button {
+  background-color: rgb(65, 249, 65);
+  width: 375px;
+  height: 40px;
+  color: black;
+  border-radius: 7px;
+  border: none;
+  font-weight: bold;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25vh;
+  height: 30vh;
+  border-collapse:collapse;
+
+}
+
+#table > div > table > thead {
+  padding: 10px;
+  font-size: 15px;
+  border-bottom: 2px solid black;
+}
+
+#table > div > table > thead > tr > th {
+  width: 143px;
+  border-right: 2px solid black;
+}
+
+#table > div > table > tbody {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 40vh;
+  overflow: scroll;
+}
+
+#table > div > table > tbody > tr > td {
+  border-bottom: 2px solid black;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 143px;
+  font-size: 13.6px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: grey;
+}
+::-webkit-scrollbar-corner {
+  background-color: #003BE5;
+}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+import logo from '../logo Trybe Wallet.png';
+import {AiOutlineUser} from 'react-icons/ai';
 class Header extends Component {
   calculateExpense = () => {
     const { expenses } = this.props;
@@ -19,15 +20,19 @@ class Header extends Component {
     const { email } = this.props;
     const total = this.calculateExpense();
     return (
-      <div>
-        <h1>Header</h1>
+      <header id="header-items">
+        <div id="header-content">
+          <h1>WALLET</h1>
+          <p data-testid="email-field">{AiOutlineUser()}{email}</p>
+          <p data-testid="total-field">
+            {' '}
+            Total de despesas:
+            {' '}
+            <span>{total} BRL</span>
 
-        <div>
-          <p data-testid="email-field">{email}</p>
-          <p data-testid="total-field">{total}</p>
-          <p data-testid="header-currency-field">BRL</p>
+          </p>
         </div>
-      </div>
+      </header>
     );
   }
 }

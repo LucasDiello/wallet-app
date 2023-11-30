@@ -18,7 +18,6 @@ class Table extends Component {
     const { expenses } = this.props;
     return (
       <div>
-        <p>Table</p>
         <table>
           <thead>
             <tr>

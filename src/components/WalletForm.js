@@ -10,7 +10,7 @@ class WalletForm extends Component {
     description: '',
     currency: 'USD',
     method: 'Dinheiro',
-    tag: '',
+    tag: 'Alimentação',
   };
 
   componentDidMount() {
@@ -61,21 +61,10 @@ class WalletForm extends Component {
     const { currencies, editor } = this.props;
     const { value, description } = this.state;
     return (
-      <div>
-        WalletForm
-        <form>
-          <label>
-            Valor
-            <input
-              onChange={ this.handleChange }
-              value={ value }
-              name="value"
-              data-testid="value-input"
-              type="text"
-            />
-          </label>
-          <label>
-            Descrição
+      <div id='table-content'>
+        <form id='form-table'>
+        <label>
+            Descrição da despesa
             <input
               onChange={ this.handleChange }
               value={ description }
@@ -85,16 +74,24 @@ class WalletForm extends Component {
             />
           </label>
           <label>
-            Moeda Registrada
-            <select
-              onChange={ this.handleChange }
-              name="currency"
-              data-testid="currency-input"
-            >
-              {currencies.map((curr) => (
-                <option key={ curr }>{curr}</option>
-              ))}
+            Categoria da despesa
+            <select onChange={ this.handleChange } name="tag" data-testid="tag-input">
+              <option>Alimentação</option>
+              <option>Lazer</option>
+              <option>Trabalho</option>
+              <option>Transporte</option>
+              <option>Saúde</option>
             </select>
+          </label>
+          <label>
+            Valor
+            <input
+              onChange={ this.handleChange }
+              value={ value }
+              name="value"
+              data-testid="value-input"
+              type="number"
+            />
           </label>
           <label>
             Metodo de Pagamento
@@ -109,18 +106,22 @@ class WalletForm extends Component {
             </select>
           </label>
           <label>
-            Tag
-            <select onChange={ this.handleChange } name="tag" data-testid="tag-input">
-              <option>Alimentação</option>
-              <option>Lazer</option>
-              <option>Trabalho</option>
-              <option>Transporte</option>
-              <option>Saúde</option>
+            Moeda Registrada
+            <select
+              onChange={ this.handleChange }
+              name="currency"
+              data-testid="currency-input"
+            >
+              {currencies.map((curr) => (
+                <option key={ curr }>{curr}</option>
+              ))}
             </select>
           </label>
-          { editor ? <button onClick={ this.handleEdit }>Editar despesas</button>
-            : <button onClick={ this.handleClick }>Adicionar despesas</button>}
         </form>
+        <div>
+        { editor ? <button onClick={ this.handleEdit }>Editar despesas</button>
+            : <button onClick={ this.handleClick }>Adicionar despesas</button>}
+        </div>
       </div>
     );
   }
